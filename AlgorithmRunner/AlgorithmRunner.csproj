@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ackerman\Ackerman.csproj" />
+    <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

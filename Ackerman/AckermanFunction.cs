@@ -1,4 +1,6 @@
-﻿namespace Ackerman
+﻿using System;
+
+namespace Ackerman
 {
     public static class AckermanFunction
     {
@@ -24,6 +26,16 @@
             }
 
             return result;
+        }
+
+        public static int Execute(int[] arguments)
+        {
+            if (arguments.Length != 2)
+            {
+                throw new ArgumentException($"Wrong number of arguments in {nameof(AckermanFunction)} call, arguments: {String.Join(',', arguments)}");
+            }
+
+            return Execute(arguments[0], arguments[1]);
         }
     }
 }

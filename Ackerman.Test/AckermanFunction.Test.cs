@@ -53,5 +53,17 @@ namespace AckermanFunction.Test
         {
             Assert.Equal(4, Ackerman.AckermanFunction.Execute(1, 2));
         }
+
+        [Fact]
+        public void AFail()
+        {
+            Assert.Throws(new ArgumentException().GetType(), () => { var value = Ackerman.AckermanFunction.Execute(new int[3] { 1, 2, 3 }); });
+        }
+
+        [Fact]
+        public void AFailL()
+        {
+            Assert.Throws(new ArgumentException().GetType(), () => { var value = Ackerman.AckermanFunction.Execute(new int[0]); });
+        }
     }
 }
