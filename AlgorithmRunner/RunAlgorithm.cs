@@ -14,5 +14,20 @@ namespace AlgorithmRunner
 
             Console.WriteLine($"Executing algorithm with parameters {String.Join(',', inputs)}, with result {result}, elapsed time {stopwatch.ElapsedMilliseconds.ToString()} ms");
         }
+
+        public static void RunAlgorithm(Func<int[], int[]> algorithm, params int[] input)
+        {
+            Console.WriteLine("Executing algorithm with parameters: ");
+            Console.WriteLine(String.Join(',', input));
+
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            var result = algorithm.Invoke(input);
+            stopwatch.Stop();
+
+            Console.WriteLine("with result:");
+            Console.WriteLine(String.Join(',', result));
+            Console.WriteLine($"Elapsed time {stopwatch.ElapsedMilliseconds.ToString()} ms");
+        }
     }
 }

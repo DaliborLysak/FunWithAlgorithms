@@ -4,7 +4,7 @@ using Fibonacci;
 
 namespace Fibonacci.Test
 {
-    public class UnitTest1
+    public class FibonacciTest
     {
         [Fact]
         public void F0()

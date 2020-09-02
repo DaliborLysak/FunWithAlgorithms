@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ackerman\Ackerman.csproj" />
     <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
+    <ProjectReference Include="..\InsertionSort\InsertionSort.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

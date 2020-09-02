@@ -1,6 +1,7 @@
 ﻿using System;
 using Ackerman;
 using Fibonacci;
+using InsertionSort;
 
 namespace AlgorithmRunner
 {
@@ -9,9 +10,16 @@ namespace AlgorithmRunner
         static void Main(string[] args)
         {
             //RunAckerman();
-            RunFibonacci();
+            //RunFibonacci();
+            RunInsertionSort();
 
             Console.ReadLine();
+        }
+
+        private static void RunInsertionSort()
+        {
+            Console.WriteLine("RunInsertion Sort");
+            AlgorithmRunner.RunAlgorithm(InsertionSort.Insertion.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
         }
 
         private static void RunFibonacci()
