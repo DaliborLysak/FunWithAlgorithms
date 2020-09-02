@@ -1,7 +1,7 @@
 ﻿using System;
 using Ackerman;
 using Fibonacci;
-using InsertionSort;
+using SortAlgorithms;
 
 namespace AlgorithmRunner
 {
@@ -12,14 +12,23 @@ namespace AlgorithmRunner
             //RunAckerman();
             //RunFibonacci();
             RunInsertionSort();
+            RunSelectionSort();
 
             Console.ReadLine();
         }
 
+        private static void RunSelectionSort()
+        {
+            Console.WriteLine("Run Selection Sort");
+            AlgorithmRunner.RunAlgorithm(SortAlgorithms.SelectionSort.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
+            Console.WriteLine();
+        }
+
         private static void RunInsertionSort()
         {
-            Console.WriteLine("RunInsertion Sort");
-            AlgorithmRunner.RunAlgorithm(InsertionSort.Insertion.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
+            Console.WriteLine("Run Insertion Sort");
+            AlgorithmRunner.RunAlgorithm(SortAlgorithms.InsertionSort.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
+            Console.WriteLine();
         }
 
         private static void RunFibonacci()
@@ -28,6 +37,7 @@ namespace AlgorithmRunner
             AlgorithmRunner.RunAlgorithm(Fibonacci.FibonacciNumber.ExecuteRecursion, 45);
             Console.WriteLine("Fibonacci - tail recursion");
             AlgorithmRunner.RunAlgorithm(Fibonacci.FibonacciNumber.ExecuteTailRecursion, 45);
+            Console.WriteLine();
         }
 
         private static void RunAckerman()
@@ -37,6 +47,7 @@ namespace AlgorithmRunner
             AlgorithmRunner.RunAlgorithm(Ackerman.AckermanFunction.Execute, 3, 2);
             AlgorithmRunner.RunAlgorithm(Ackerman.AckermanFunction.Execute, 3, 4);
             //AlgorithmRunner.RunAlgorithm(Ackerman.AckermanFunction.Execute, 4, 1); //Stack overflow. - haha not expected
+            Console.WriteLine();
         }
     }
 }

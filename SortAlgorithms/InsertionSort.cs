@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 
-namespace InsertionSort
+namespace SortAlgorithms
 {
-    public static class Insertion
+    public static class InsertionSort
     {
         public static int[] Sort(int[] data)
         {
