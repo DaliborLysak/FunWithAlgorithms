@@ -3,31 +3,26 @@ using System.Linq;
 
 namespace SortAlgorithms
 {
-    public static class SelectionSort
+    public class SelectionSort : SortAlgorithm
     {
-        public static int[] Sort(int[] data)
+        public override int[] Sort(int[] data)
         {
-            if (data.Count() > 1)
+            for (var i = 0; i < data.Count(); i++)
             {
-                for (var i = 0; i < data.Count(); i++)
+                var minimumIndex = i;
+
+                for (var j = i + 1; j < data.Count(); j++)
                 {
-                    var minimumIndex = i;
-
-                    for (var j = i + 1; j < data.Count(); j++)
+                    if (data[j] < data[minimumIndex])
                     {
-                        if (data[j] < data[minimumIndex])
-                        {
-                            minimumIndex = j;
-                        }
-
+                        minimumIndex = j;
                     }
 
-                    var value = data[i];
-                    data[i] = data[minimumIndex];
-                    data[minimumIndex] = value;
                 }
 
+                data.Swap(i, minimumIndex);
             }
+
 
             return data;
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Ackerman;
 using Fibonacci;
 using SortAlgorithms;
@@ -11,23 +13,22 @@ namespace AlgorithmRunner
         {
             //RunAckerman();
             //RunFibonacci();
-            RunInsertionSort();
-            RunSelectionSort();
+            RunSorts();
 
             Console.ReadLine();
         }
 
-        private static void RunSelectionSort()
+        private static void RunSorts()
         {
-            Console.WriteLine("Run Selection Sort");
-            AlgorithmRunner.RunAlgorithm(SortAlgorithms.SelectionSort.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
-            Console.WriteLine();
+            RunSort(SortAlgorithmService.Sort<BubbleSort>, "Bubble Sort");
+            RunSort(SortAlgorithmService.Sort<SelectionSort>, "Selection Sort");
+            RunSort(SortAlgorithmService.Sort<InsertionSort>, "Insertion Sort");
         }
 
-        private static void RunInsertionSort()
+        private static void RunSort(Func<int[], int[]> algorithm, string name)
         {
-            Console.WriteLine("Run Insertion Sort");
-            AlgorithmRunner.RunAlgorithm(SortAlgorithms.InsertionSort.Sort, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
+            Console.WriteLine($"Run {name}");
+            AlgorithmRunner.RunAlgorithm(algorithm, new int[10] { -5, 10, 3, -8, 8, 0, -2, 15, 3, 1 });
             Console.WriteLine();
         }
 

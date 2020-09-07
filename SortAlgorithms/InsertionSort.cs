@@ -3,26 +3,21 @@ using System.Linq;
 
 namespace SortAlgorithms
 {
-    public static class InsertionSort
+    public class InsertionSort : SortAlgorithm
     {
-        public static int[] Sort(int[] data)
+        public override int[] Sort(int[] data)
         {
-            if (data.Count() > 1)
+            var i = 1;
+            while (i < data.Count())
             {
-                var i = 1;
-                while (i < data.Count())
+                var j = i;
+                while ((j > 0) && (data[j - 1] > data[j]))
                 {
-                    var j = i;
-                    while ((j > 0) && (data[j - 1] > data[j]))
-                    {
-                        var value = data[j - 1];
-                        data[j - 1] = data[j];
-                        data[j] = value;
-                        j--;
-                    }
-
-                    i++;
+                    data.Swap(j - 1, j);
+                    j--;
                 }
+
+                i++;
             }
 
             return data;
