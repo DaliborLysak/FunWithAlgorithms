@@ -20,10 +20,11 @@ namespace AlgorithmRunner
 
         private static void RunSorts()
         {
-            RunSort(SortAlgorithmService.Sort<BubbleSort>, "Bubble Sort"); // realy slow, limit 10^3 elements
-            RunSort(SortAlgorithmService.Sort<SelectionSort>, "Selection Sort"); // realy slow , limit 10^4 elements
-            RunSort(SortAlgorithmService.Sort<InsertionSort>, "Insertion Sort"); // faster for 10^4 then MergeSort, after 10^5 realy slow
+            //RunSort(SortAlgorithmService.Sort<BubbleSort>, "Bubble Sort"); // realy slow, limit 10^3 elements
+            //RunSort(SortAlgorithmService.Sort<SelectionSort>, "Selection Sort"); // realy slow , limit 10^4 elements
+            //RunSort(SortAlgorithmService.Sort<InsertionSort>, "Insertion Sort"); // faster for 10^4 then MergeSort, after 10^5 realy slow
             RunSort(SortAlgorithmService.Sort<MergeSort>, "Merge Sort"); // starts shine around 10000 elements, around 19s for 10^7
+            RunSort(SortAlgorithmService.Sort<QuickSort>, "Quick Sort"); // shines always
         }
 
         private static int[] GetSortArray()
@@ -36,7 +37,7 @@ namespace AlgorithmRunner
             }
             else
             {
-                sortArray = new int[10000]; // 10^4 is good example
+                sortArray = new int[1000000]; // 10^4 is good example
                 var random = new Random();
                 for (var i = 0; i < sortArray.Count(); i++)
                 {
