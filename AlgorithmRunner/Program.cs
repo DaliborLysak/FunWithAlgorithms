@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ackerman;
+using FareySequence;
 using Fibonacci;
 using SortAlgorithms;
 
@@ -13,9 +14,20 @@ namespace AlgorithmRunner
         {
             //RunAckerman();
             //RunFibonacci();
-            RunSorts();
+            //RunSorts();
+            CalculateFareySequence();
 
             Console.ReadLine();
+        }
+
+        private static void CalculateFareySequence()
+        {
+            Console.WriteLine("Farey Sequence");
+            var calculator = new FareySequenceCalculator();
+            for (int i = 0; i < 9; i++)
+            {
+                Console.WriteLine($"F{i}: {calculator.Execute(i)}");
+            }
         }
 
         private static void RunSorts()

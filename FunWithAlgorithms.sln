@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithms", "SortAlgor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithms.Test", "SortAlgorithms.Test\SortAlgorithms.Test.csproj", "{2DF6F663-9812-4D88-B554-6BCD5E2960D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FareySequence", "FareySequence\FareySequence.csproj", "{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,5 +116,17 @@ Global
 		{2DF6F663-9812-4D88-B554-6BCD5E2960D4}.Release|x64.Build.0 = Release|Any CPU
 		{2DF6F663-9812-4D88-B554-6BCD5E2960D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{2DF6F663-9812-4D88-B554-6BCD5E2960D4}.Release|x86.Build.0 = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|x64.Build.0 = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2D54E87-52F8-4F03-BB82-71EF1098CBF4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@ using System;
 
 namespace SortAlgorithms
 {
-    public class QuickSort : SortAlgorithm
+    public partial class QuickSort : SortAlgorithm
     {
         public override int[] Sort(int[] data)
         {

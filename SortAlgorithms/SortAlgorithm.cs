@@ -7,5 +7,9 @@ namespace SortAlgorithms
             return data;
         }
 
+        public virtual ISortable[] Sort(ISortable[] data)
+        {
+            return data;
+        }
     }
 }
