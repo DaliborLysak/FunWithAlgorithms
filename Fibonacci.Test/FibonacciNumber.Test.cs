@@ -1,99 +1,56 @@
 using System;
 using Xunit;
 using Fibonacci;
+using System.Collections.Generic;
 
 namespace Fibonacci.Test
 {
     public class FibonacciTest
     {
-        [Fact]
-        public void F0()
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(3, 2)]
+        [InlineData(4, 3)]
+        [InlineData(5, 5)]
+        [InlineData(6, 8)]
+        [InlineData(7, 13)]
+        [InlineData(10, 55)]
+        [InlineData(15, 610)]
+        [InlineData(20, 6765)]
+        public void Execute(int number, int expectedValue)
         {
-            Assert.Equal(0, Fibonacci.FibonacciNumber.Execute(0));
+            Assert.Equal(expectedValue, Fibonacci.FibonacciNumber.Execute(number));
         }
 
-        [Fact]
-        public void F1()
+        public static IEnumerable<object[]> Arguments =>
+            new List<object[]>
+                {
+                    new object[] { new int[0], typeof(ArgumentException) },
+                    new object[] { new int[3] { 1, 2, 3 }, typeof(ArgumentException) }
+                };
+
+        [Theory, MemberData(nameof(Arguments))]
+        public void ExecuteRecursionWithArgumentException(int[] arguments, Type type)
         {
-            Assert.Equal(1, Fibonacci.FibonacciNumber.Execute(1));
+            // arrange
+
+            // act
+
+            // assert
+            Assert.Throws(type, () => { Fibonacci.FibonacciNumber.ExecuteRecursion(arguments); });
         }
 
-        [Fact]
-        public void F2()
+        [Theory, MemberData(nameof(Arguments))]
+        public void ExecuteTailRecursionWithArgumentException(int[] arguments, Type type)
         {
-            Assert.Equal(1, Fibonacci.FibonacciNumber.Execute(2));
-        }
+            // arrange
 
-        [Fact]
-        public void F3()
-        {
-            Assert.Equal(2, Fibonacci.FibonacciNumber.Execute(3));
-        }
+            // act
 
-        [Fact]
-        public void F4()
-        {
-            Assert.Equal(3, Fibonacci.FibonacciNumber.Execute(4));
-        }
-
-        [Fact]
-        public void F5()
-        {
-            Assert.Equal(5, Fibonacci.FibonacciNumber.Execute(5));
-        }
-
-        [Fact]
-        public void F6()
-        {
-            Assert.Equal(8, Fibonacci.FibonacciNumber.Execute(6));
-        }
-
-        [Fact]
-        public void F7()
-        {
-            Assert.Equal(13, Fibonacci.FibonacciNumber.Execute(7));
-        }
-
-        [Fact]
-        public void F10()
-        {
-            Assert.Equal(55, Fibonacci.FibonacciNumber.Execute(10));
-        }
-
-        [Fact]
-        public void F15()
-        {
-            Assert.Equal(610, Fibonacci.FibonacciNumber.Execute(15));
-        }
-
-        [Fact]
-        public void F20()
-        {
-            Assert.Equal(6765, Fibonacci.FibonacciNumber.Execute(20));
-        }
-
-        [Fact]
-        public void FFail()
-        {
-            Assert.Throws(new ArgumentException().GetType(), () => { var value = Fibonacci.FibonacciNumber.ExecuteRecursion(new int[3] { 1, 2, 3 }); });
-        }
-
-        [Fact]
-        public void FFailTail()
-        {
-            Assert.Throws(new ArgumentException().GetType(), () => { var value = Fibonacci.FibonacciNumber.ExecuteTailRecursion(new int[3] { 1, 2, 3 }); });
-        }
-
-        [Fact]
-        public void AFailL()
-        {
-            Assert.Throws(new ArgumentException().GetType(), () => { var value = Fibonacci.FibonacciNumber.ExecuteRecursion(new int[0]); });
-        }
-
-        [Fact]
-        public void AFailLTail()
-        {
-            Assert.Throws(new ArgumentException().GetType(), () => { var value = Fibonacci.FibonacciNumber.ExecuteTailRecursion(new int[0]); });
+            // assert
+            Assert.Throws(type, () => { Fibonacci.FibonacciNumber.ExecuteTailRecursion(arguments); });
         }
     }
 }
