@@ -51,10 +51,10 @@ namespace Fibonacci
 
         public static int ExecuteTailRecursion(int number)
         {
-            return go(number, 0, 1);
+            return Calculate(number, 0, 1);
         }
 
-        private static int go(int number, int current, int next)
+        private static int Calculate(int number, int current, int next)
         {
             var value = 0;
 
@@ -68,7 +68,7 @@ namespace Fibonacci
             }
             else
             {
-                value = go(number - 1, next, current + next);
+                value = Calculate(number - 1, next, current + next);
             }
 
             return value;
