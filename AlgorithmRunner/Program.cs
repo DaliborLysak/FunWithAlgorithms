@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Ackerman;
 using FareySequence;
 using Fibonacci;
 using SortAlgorithms;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using AlgorithmRunner.Benchmarks;
 
 namespace AlgorithmRunner
 {
@@ -12,9 +15,21 @@ namespace AlgorithmRunner
     {
         static void Main(string[] args)
         {
-            //RunAckerman();
-            //RunFibonacci();
-            //RunSorts();
+            // TestRun();
+
+            BenchmarkAlgorithms();
+        }
+
+        private static void BenchmarkAlgorithms()
+        {
+            var summary = BenchmarkRunner.Run<BenchmarkAckerman>();
+        }
+
+        private static void TestRun()
+        {
+            RunAckerman();
+            RunFibonacci();
+            RunSorts();
             CalculateFareySequence();
 
             Console.ReadLine();
